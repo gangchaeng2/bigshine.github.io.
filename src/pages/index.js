@@ -1,3 +1,13 @@
-import React from "react"
+ import React from 'react'
 
-export default () => <div>배포</div>
+ import Layout from '../components/Layout'
+
+const Index = () => {
+  return (
+    <Layout>
+      <div>sdfdsf</div>
+    </Layout>
+  )
+}
+
+export default Index
