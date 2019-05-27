@@ -1,0 +1,1 @@
+{"data":{"allMarkdownRemark":{"totalCount":2,"edges":[{"node":{"frontmatter":{"title":"My First Post","path":"/first-post","date":"2019-05-27","tags":["test","test2"]}}},{"node":{"frontmatter":{"title":"My Second Post","path":"/first-post","date":"2019-05-27","tags":["test","test2"]}}}]}},"pageContext":{"isCreatedByStatefulCreatePages":true}}
