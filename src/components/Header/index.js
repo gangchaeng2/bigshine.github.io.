@@ -1,12 +1,11 @@
 import React from 'react'
-import { } from 'prop-types'
 
 import { Wrap, A, Ul } from './styled'
 
 const Header = ({ title, description, }) => {
   return (
     <Wrap>
-      <A href="/bigshine">Bigshine</A>
+      <A to="/">Bigshine</A>
 
       <Ul className='Clearfix'>
         <li>About</li>

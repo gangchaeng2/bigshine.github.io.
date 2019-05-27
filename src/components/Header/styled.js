@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 export const Wrap = styled.div`
   padding: 0 20px;
@@ -6,7 +7,7 @@ export const Wrap = styled.div`
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
 `
 
-export const A = styled.a`
+export const A = styled(Link)`
   float: left;
   line-height: 80px;
   font-size: 20px;
