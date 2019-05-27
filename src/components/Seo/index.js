@@ -1,36 +1,81 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
+import React from "react"
+import { Helmet } from "react-helmet"
+import { string, bool } from "prop-types"
+import { StaticQuery, graphql } from "gatsby"
 
-const Seo = props => {
-  const { data } = props
-  const postTitle = ((data || {}).frontmatter || {}).title
-  const postDescription = ((data || {}).frontmatter || {}).description
-  const postCover = ((data || {}).frontmatter || {}).cover
-  const postSlug = ((data || {}).fields || {}).slug
+const SEO = ({ lang, title, description, pathname }) => (
+  <StaticQuery
+    query={query}
+    render={({
+      site: {
+        siteMetadata: {
+          defaultTitle,
+          titleTemplate,
+          defaultDescription,
+          siteUrl,
+          keywords
+        },
+      },
+    }) => {
+      const seo = {
+        title: title || defaultTitle,
+        description: description || defaultDescription,
+        url: `${siteUrl}${pathname || "/"}`,
+        keywords: keywords
+      }
+      
+      return (
+        <>
+          <Helmet
+            htmlAttributes={{ lang }}
+            title={seo.title}
+            titleTemplate={titleTemplate}>
+            
+            <meta name="description" content={seo.description} />
+            <meta name="keywords" content={keywords.join(', ')} />
 
-  const title = postTitle ? `${postTitle} - ${config.shortSiteTitle}` : config.siteTitle
-  const description = postDescription ? postDescription : config.siteDescription
-  const image = postCover ? postCover : config.siteImage
-  const url = config.siteUrl + config.pathPrefix + postSlug
+            <meta property="og:url" content={seo.url} />
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content={seo.title} />
+            <meta property="og:description" content={seo.description} />
+            
+            <meta name="twitter:title" content={seo.title} />
+            <meta name="twitter:description" content={seo.description} />
+          </Helmet>
+        </>
+      )
+    }}
+  />
+)
 
-  return (
-    <Helmet>
-      {/* General tags */}
-      <title>{title}</title>
-      <meta name='description' content={description} />
-      {/* OpenGraph tags */}
-      <meta property='og:url' content={url} />
-      <meta property='og:title' content={title} />
-      <meta property='og:description' content={description} />
-      <meta property='og:image' content={image} />
-      <meta property='og:type' content='website' />
-    </Helmet>
-  )
+export default SEO
+
+SEO.propTypes = {
+  title: string,
+  description: string,
+  pathname: string,
+  article: bool,
+  lang: string,
 }
 
-Seo.propTypes = {
-  data: PropTypes.object,
+SEO.defaultProps = {
+  title: null,
+  description: null,
+  pathname: null,
+  article: false,
+  lang: 'ko'
 }
 
-export default Seo
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        titleTemplate
+        defaultDescription: description
+        siteUrl: url
+        keywords
+      }
+    }
+  }
+`
