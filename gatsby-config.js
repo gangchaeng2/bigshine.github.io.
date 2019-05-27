@@ -1,14 +1,7 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
 const path = require('path')
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`
 })
-
 
 module.exports = {
   siteMetadata: {
@@ -34,23 +27,14 @@ module.exports = {
       }
     },
     'gatsby-plugin-styled-components',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'src',
-        path: `${__dirname}/src/`,
+        name: 'posts',
+        path: `${__dirname}/posts`,
       },
     },
-    'gatsby-transformer-remark',
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: "./data/",
-      },
-    },
-    "gatsby-transformer-json",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
     {
       resolve: 'gatsby-plugin-root-import',
       options: {

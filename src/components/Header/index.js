@@ -6,7 +6,7 @@ import { Wrap, A, Ul } from './styled'
 const Header = ({ title, description, }) => {
   return (
     <Wrap>
-      <A href="/">Bigshine</A>
+      <A href="/bigshine">Bigshine</A>
 
       <Ul className='Clearfix'>
         <li>About</li>

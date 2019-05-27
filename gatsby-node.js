@@ -1,27 +1,36 @@
-exports.createPages = async ({ actions: { createPage }, graphql }) => {
-  const results = await graphql(`
+const path = require("path")
+
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
+
+  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
+
+  return graphql(`
     {
-      allProductsJson {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
         edges {
           node {
-            slug
+            frontmatter {
+              path
+            }
           }
         }
       }
     }
-  `)
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors)
+    }
 
-  console.log(results.data.allProductsJson.edges)
-
-  results.data.allProductsJson.edges.forEach(edge => {
-    const product = edge.node
-
-    createPage({
-      path: `/gql/${product.slug}/`,
-      component: require.resolve("./src/templates/product-graphql.js"),
-      context: {
-        slug: product.slug,
-      },
+    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: blogPostTemplate,
+        context: {}, // additional data can be passed via context
+      })
     })
   })
 }
