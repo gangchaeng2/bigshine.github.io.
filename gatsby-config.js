@@ -43,6 +43,12 @@ module.exports = {
         components: path.join(__dirname, 'src/components'),
       }
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-140924264-1",
+      },
+    },
   ]
   /* Your site config here */
 }
