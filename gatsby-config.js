@@ -9,7 +9,8 @@ module.exports = {
     titleTemplate: "%s :)",
     description: 'Bigshine 블로그 입니다',
     keywords: ['프론트엔드', '웹개발자', 'FrontEnd', 'WebDeveloper', 'Bigshine'],
-    url: "https://bigshine.netlify.com",
+    url: 'https://bigshine.netlify.com',
+    siteUrl: 'https://bigshine.netlify.com',
   },
   pathPrefix: "/gangchaeng2.github.io",
   plugins: [
@@ -26,8 +27,6 @@ module.exports = {
         }
       }
     },
-    'gatsby-plugin-styled-components',
-    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -49,6 +48,9 @@ module.exports = {
         trackingId: "UA-140924264-1",
       },
     },
+    'gatsby-transformer-remark',
+    'gatsby-plugin-styled-components',
+    `gatsby-plugin-sitemap`,
   ]
   /* Your site config here */
 }

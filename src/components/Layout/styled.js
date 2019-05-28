@@ -11,9 +11,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   @font-face { 
+    font-family:'HangeulNuri Bold';
+    src: url(${withPrefix('fonts/HangeulNuriB.ttf')}) format('truetype');
+  }
+
+  @font-face { 
     font-family:'BMHANNAAir';
     src: url(${withPrefix('fonts/BMHANNAAir.ttf')}) format('truetype'),
-    url(${withPrefix('fonts/BMHANNAAir.otf')}) format('opentype');
+         url(${withPrefix('fonts/BMHANNAAir.otf')}) format('opentype');
   }
 
   body {
