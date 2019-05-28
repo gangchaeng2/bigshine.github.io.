@@ -9,7 +9,7 @@ module.exports = {
     titleTemplate: "%s :)",
     description: 'Bigshine 블로그 입니다',
     keywords: ['프론트엔드', '웹개발자', 'FrontEnd', 'WebDeveloper', 'Bigshine'],
-    url: "https://gangchaeng2.github.io/",
+    url: "https://bigshine.netlify.com",
   },
   pathPrefix: "/gangchaeng2.github.io",
   plugins: [
