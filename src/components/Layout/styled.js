@@ -1,15 +1,26 @@
 import { createGlobalStyle } from 'styled-components'
+import { withPrefix } from 'gatsby'
 import reset from 'styled-reset'
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
-  @import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+
+  @font-face { 
+    font-family:'HangeulNuri';
+    src: url(${withPrefix('fonts/HangeulNuriR.ttf')}) format('truetype');
+  }
+
+  @font-face { 
+    font-family:'BMHANNAAir';
+    src: url(${withPrefix('fonts/BMHANNAAir.ttf')}) format('truetype'),
+    url(${withPrefix('fonts/BMHANNAAir.otf')}) format('opentype');
+  }
 
   body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Spoqa Han Sans', 'Sans-serif'; 
+    font-family: 'BMHANNAAir', 'Sans-serif'; 
     box-sizing: border-box;
   }
 

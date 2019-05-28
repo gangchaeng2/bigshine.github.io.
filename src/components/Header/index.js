@@ -8,7 +8,7 @@ const Header = ({ title, description, }) => {
       <A to="/">Bigshine</A>
 
       <Ul className='Clearfix'>
-        <li>About</li>
+        <li>소개</li>
         <li>About</li>
         <li>About</li>
       </Ul>
