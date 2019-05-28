@@ -11,7 +11,7 @@ module.exports = {
     keywords: ['프론트엔드', '웹개발자', 'FrontEnd', 'WebDeveloper', 'Bigshine'],
     url: "https://gangchaeng2.github.io/bigshine/",
   },
-  pathPrefix: "/",
+  pathPrefix: "/gangchaeng2.github.io",
   plugins: [
     'gatsby-plugin-react-helmet',
     {
