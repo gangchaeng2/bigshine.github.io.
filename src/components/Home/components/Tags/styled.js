@@ -16,5 +16,9 @@ export const Tags = styled.ul`
     & + li {
       margin-top: 5px;
     }
+
+    span {
+      color: #909090;
+    }
   }
 `

@@ -23,7 +23,7 @@ export default () => {
       <Tags>
         {group.map(item => (
           <li key={item.fieldValue}>
-            <Link to={`/${item.fieldValue}`}>{item.fieldValue} ({item.totalCount})</Link>
+            <Link to={`/${item.fieldValue}`}>{item.fieldValue} <span>({item.totalCount})</span></Link>
           </li>
         ))}
       </Tags>
