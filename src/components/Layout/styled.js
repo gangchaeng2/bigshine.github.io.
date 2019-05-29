@@ -11,7 +11,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   @font-face { 
-    font-family:'HangeulNuri Bold';
+    font-family:'HangeulNuri';
+    font-weight: 700;
     src: url(${withPrefix('fonts/HangeulNuriB.ttf')}) format('truetype');
   }
 
@@ -25,11 +26,12 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'BMHANNAAir', 'Sans-serif'; 
+    font-family: 'HangeulNuri', 'Sans-serif'; 
     box-sizing: border-box;
   }
 
   a {
+    color: black;
     text-decoration: none;
   }
 

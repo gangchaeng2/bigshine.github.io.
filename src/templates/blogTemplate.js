@@ -4,6 +4,8 @@ import { graphql } from 'gatsby'
 
 import Layout from 'components/Layout'
 
+import { Wrap } from './styled'
+
 const Template = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
@@ -12,13 +14,13 @@ const Template = ({ data }) => {
     <Layout>
       <Helmet title={frontmatter.title} />
 
-      <div>
+      <Wrap>
         <div>
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
         </div>
         <div dangerouslySetInnerHTML={{ __html: html }} />
-      </div>
+      </Wrap>
     </Layout>
   )
 }

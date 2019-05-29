@@ -1,16 +1,16 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import { Wrap, A, Ul } from './styled'
 
-const Header = ({ title, description, }) => {
+const Header = () => {
   return (
     <Wrap>
       <A to="/">Bigshine</A>
 
       <Ul className='Clearfix'>
-        <li>소개</li>
-        <li>About</li>
-        <li>About</li>
+        <li><Link to='/intro'>소개</Link></li>
+        <li><Link to='/dev'>Dev</Link></li>
       </Ul>
     </Wrap>
   )
