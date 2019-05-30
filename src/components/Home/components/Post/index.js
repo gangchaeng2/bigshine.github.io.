@@ -3,21 +3,22 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import { Wrap } from './styled'
 
-export default () => {
-  const { allMarkdownRemark: { edges} } = useStaticQuery(
+export default ({ list }) => {
+  const { allMarkdownRemark: { edges } } = useStaticQuery(
     graphql`
       query HomepageQuery {
         allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
+          sort: { fields: [frontmatter___date], order: DESC }
         ) {
-          totalCount,
+          totalCount
           edges {
             node {
+              fields {
+                slug
+              }
               frontmatter {
-                title
                 path
-                date
-                tags
+                title
               }
             }
           }
@@ -26,16 +27,16 @@ export default () => {
     `
   )
 
-  const postsData = edges.map(edge => edge.node)
+  const items = list ? list : edges
+  const postsData = items.map(edge => edge.node)
 
   return (
     <Wrap>
       {postsData.map(item => {
-        const { frontmatter } = item
-    
+        const { fields, frontmatter } = item
         return (
-          <div key={frontmatter.path}>
-            <Link to={frontmatter.path}>{frontmatter.title}</Link>
+          <div key={fields.slug}>
+            <Link to={fields.slug}>{frontmatter.title}</Link>
           </div>
         )
       })}

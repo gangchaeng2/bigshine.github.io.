@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { string, bool } from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-const SEO = ({ lang, title, description, pathname }) => (
+const SEO = ({ lang, title, description, pathname, tag }) => (
   <StaticQuery
     query={query}
     render={({
@@ -18,12 +18,12 @@ const SEO = ({ lang, title, description, pathname }) => (
       },
     }) => {
       const seo = {
-        title: title || defaultTitle,
+        title: `${title || defaultTitle} ${tag ? '#'+tag : ''}`,
         description: description || defaultDescription,
         url: `${siteUrl}${pathname || "/"}`,
         keywords: keywords
       }
-      
+
       return (
         <>
           <Helmet

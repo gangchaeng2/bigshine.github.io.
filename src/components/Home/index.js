@@ -4,11 +4,11 @@ import { Post, Tags } from './components'
 
 import { Wrap } from './styled'
 
-const HomeComponent = () => {
+const HomeComponent = data => {
   return (
     <Wrap className='Clearfix'>
-      <Tags />
-      <Post />
+      <Tags {...data} />
+      <Post {...data} />
     </Wrap>
   )
 }

@@ -24,7 +24,7 @@ export const Tags = styled.ul`
 
     a {
       &.active {
-        color: #0a429c;
+        color: #845ef7;
       }
     }
   }

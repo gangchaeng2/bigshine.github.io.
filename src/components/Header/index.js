@@ -8,10 +8,10 @@ const Header = () => {
     <Wrap>
       <A to="/">Bigshine</A>
 
-      <Ul className='Clearfix'>
+      {/* <Ul className='Clearfix'>
         <li><Link to='/intro'>소개</Link></li>
         <li><Link to='/dev'>Dev</Link></li>
-      </Ul>
+      </Ul> */}
     </Wrap>
   )
 }
