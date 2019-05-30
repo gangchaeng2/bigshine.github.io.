@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'BMHANNAAir', 'Sans-serif'; 
+    ${'' /* font-family: 'BMHANNAAir', 'Sans-serif';  */}
     box-sizing: border-box;
   }
 
