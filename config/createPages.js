@@ -51,7 +51,7 @@ module.exports = ({ actions, graphql }) => {
     // Make tag pages
     tags.forEach(tag => {
       createPage({
-        path: `/tags/${tag}/`,
+        path: `/tags/${tag}`,
         component: tagTemplate,
         context: {
           tag,
