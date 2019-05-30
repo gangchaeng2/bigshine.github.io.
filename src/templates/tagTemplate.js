@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Seo from 'components/Seo'
 import Layout from 'components/Layout'
@@ -50,7 +50,6 @@ export default Tags
 export const pageQuery = graphql`
   query($tag: String) {
     allMarkdownRemark(
-      limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
@@ -60,6 +59,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          html
           frontmatter {
             title
           }

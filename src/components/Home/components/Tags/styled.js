@@ -12,6 +12,7 @@ export const Tags = styled.ul`
 
   > li {
     width: 100%;
+    font-size: 15px;
 
     & + li {
       margin-top: 15px;

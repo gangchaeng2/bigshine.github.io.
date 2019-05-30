@@ -23,7 +23,7 @@ const TagComponent = data => {
     <Wrap>
       <section>태그</section>
       <Tags>
-        <li>
+        <li style={{ marginTop: '5px' }}>
           <Link to="/" activeClassName={isEmpty(tag) ? 'active' : ''}>전체보기</Link>
         </li>
         {group.map(item => (
