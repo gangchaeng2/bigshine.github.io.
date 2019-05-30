@@ -28,12 +28,12 @@ export const Ul = styled.ul`
       margin-left: 15px;
     }
 
-    &:hover {
-      font-weight: 700;
-    }
-
     > a {
       display: inline-block;
+
+      &:hover {
+        font-weight: 700;
+      }
     }
   }
 `

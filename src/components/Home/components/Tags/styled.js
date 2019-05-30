@@ -14,11 +14,18 @@ export const Tags = styled.ul`
     width: 100%;
 
     & + li {
-      margin-top: 5px;
+      margin-top: 15px;
     }
 
     span {
+      font-size: 13px;
       color: #909090;
+    }
+
+    a {
+      &.active {
+        color: #0a429c;
+      }
     }
   }
 `

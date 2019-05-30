@@ -21,6 +21,9 @@ export default () => {
     <Wrap>
       <section>태그</section>
       <Tags>
+        <li>
+          <Link to="/" activeClassName="active">전체보기</Link>
+        </li>
         {group.map(item => (
           <li key={item.fieldValue}>
             <Link to={`/${item.fieldValue}`}>{item.fieldValue} <span>({item.totalCount})</span></Link>

@@ -22,11 +22,17 @@ export const GlobalStyle = createGlobalStyle`
          url(${withPrefix('fonts/BMHANNAAir.otf')}) format('opentype');
   }
 
+  @font-face { 
+    font-family:'BMHANNAPro';
+    src: url(${withPrefix('fonts/BMHANNAPro.ttf')}) format('truetype'),
+         url(${withPrefix('fonts/BMHANNAPro.otf')}) format('opentype');
+  }
+
   body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'HangeulNuri', 'Sans-serif'; 
+    font-family: 'BMHANNAAir', 'Sans-serif'; 
     box-sizing: border-box;
   }
 
