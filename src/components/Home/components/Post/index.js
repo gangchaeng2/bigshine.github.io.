@@ -1,11 +1,19 @@
 import React from 'react'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser, { convertNodeToElement } from 'react-html-parser'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import { Wrap, Title } from './styled'
 
+const options = {
+  decodeEntities: true,
+  transform
+}
+
 function transform(node) {
   console.log(node)
+  if (node.name === 'code') {
+    node.name
+  }
 }
 
 export default ({ list }) => {
@@ -43,7 +51,7 @@ export default ({ list }) => {
           <li key={fields.slug}>
             <Link to={fields.slug}>
               <Title>{frontmatter.title}</Title>
-              {ReactHtmlParser(html, transform)}
+              {ReactHtmlParser(html, options)}
             </Link>
           </li>
         )
