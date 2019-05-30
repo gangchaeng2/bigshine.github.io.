@@ -51,7 +51,7 @@ export default ({ list }) => {
           <li key={fields.slug}>
             <Link to={fields.slug}>
               <Title>{frontmatter.title}</Title>
-              {ReactHtmlParser(html, options)}
+              
             </Link>
           </li>
         )
