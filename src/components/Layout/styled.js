@@ -1,6 +1,11 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import { withPrefix } from 'gatsby'
 import reset from 'styled-reset'
+
+export const Wrap = styled.div`
+  width: 100%;
+  margin: 0 auto;
+`
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 
 import Layout from 'components/Layout'
 
-import { Wrap } from './styled'
+import { Wrap, MarkdownWrap } from './styled'
 
 const Template = ({ data }) => {
   const { markdownRemark } = data
@@ -19,7 +19,7 @@ const Template = ({ data }) => {
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <MarkdownWrap dangerouslySetInnerHTML={{ __html: html }} />
       </Wrap>
     </Layout>
   )

@@ -23,12 +23,20 @@ const options = {
 // }
 
 function transform(node, index) {
-  if (node.type === 'tag' && (node.name === 'table' || node.name === 'br')) {
-    return null
+  if (node.children && node.children.length > 0) {
+
   }
-  if (node.name === 'span') {
-    return node.children[0].data
+}
+
+const koreanTagRemover = (html) => {
+  let array = []
+  const isKoreanTag = /[<][ㄱ-ㅎ|ㅏ\sㅣ|가-힣]*[>]/gm
+
+  while(array = isKoreanTag.exec(html)) {
+    html = html.replace(array['0'], array['0'].replace('<', '[').replace('>', '] '))
   }
+
+  return html
 }
 
 export default ({ list }) => {
@@ -62,7 +70,9 @@ export default ({ list }) => {
     <Wrap>
       {postsData.map(item => {
         const { fields, frontmatter, html } = item
-        console.log(ReactHtmlParser(html, options))
+        const koreanTagRemove = koreanTagRemover(html)
+        const text = join(ReactHtmlParser(koreanTagRemove, options).filter(n => n), ' ')
+
         return (
           <li key={fields.slug}>
             <Link to={fields.slug}>

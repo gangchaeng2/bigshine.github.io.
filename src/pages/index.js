@@ -7,7 +7,7 @@ import Home from 'components/Home'
 const IndexPage = () => {
   return (
     <Layout>
-      <Seo />
+      <Seo keywords={[`blog`, `bigshine`]} />
       <Home />
     </Layout>
   )
