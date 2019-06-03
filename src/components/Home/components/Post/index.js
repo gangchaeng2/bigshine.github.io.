@@ -1,43 +1,7 @@
 import React from 'react'
-import ReactHtmlParser from 'react-html-parser'
 import { useStaticQuery, graphql, Link } from 'gatsby'
-import { join } from 'lodash'
 
-import { Wrap, Title } from './styled'
-
-const options = {
-  decodeEntities: true,
-  transform
-}
-
-// function transform(node) {
-//   if (node.children && node.children.length > 0) {
-    
-//     node.children.map(item => {
-//       return item.data
-//     })
-
-//   } else if (node.type === 'text') {
-//     return node.data
-//   }
-// }
-
-function transform(node, index) {
-  if (node.children && node.children.length > 0) {
-
-  }
-}
-
-const koreanTagRemover = (html) => {
-  let array = []
-  const isKoreanTag = /[<][ㄱ-ㅎ|ㅏ\sㅣ|가-힣]*[>]/gm
-
-  while(array = isKoreanTag.exec(html)) {
-    html = html.replace(array['0'], array['0'].replace('<', '[').replace('>', '] '))
-  }
-
-  return html
-}
+import { Wrap, PostCard, Title } from './styled'
 
 export default ({ list }) => {
   const { allMarkdownRemark: { edges } } = useStaticQuery(
@@ -51,10 +15,11 @@ export default ({ list }) => {
               fields {
                 slug
               }
-              html
               frontmatter {
-                path
+                date(formatString: "YYYY년 MM월 DD일")
                 title
+                description
+                tags
               }
             }
           }
@@ -69,16 +34,16 @@ export default ({ list }) => {
   return (
     <Wrap>
       {postsData.map(item => {
-        const { fields, frontmatter, html } = item
-        const koreanTagRemove = koreanTagRemover(html)
-        const text = join(ReactHtmlParser(koreanTagRemove, options).filter(n => n), ' ')
+        const { fields, frontmatter } = item
+        const { title, date, tags, description } = frontmatter
 
         return (
-          <li key={fields.slug}>
-            <Link to={fields.slug}>
-              <Title>{frontmatter.title}</Title>
-            </Link>
-          </li>
+          <PostCard key={fields.slug}>
+            <Title>
+              <Link to={fields.slug}>{title}</Link>
+            </Title>
+            <p>{description}</p>
+          </PostCard>
         )
       })}
     </Wrap>

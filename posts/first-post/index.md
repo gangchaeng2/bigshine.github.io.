@@ -2,7 +2,8 @@
 path: "/first-post"
 date: "2019-05-26"
 title: "My First Post"
-tags: ['test', 'test2']
+description: "안녕하세요 첫번째 포스트 입니다."
+tags: ["test2"]
 ---
 
 ---

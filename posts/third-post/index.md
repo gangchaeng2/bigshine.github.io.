@@ -2,6 +2,7 @@
 path: "/third-post"
 date: "2019-05-28"
 title: "My Third Post"
+description: "안녕하세요 세번째 포스트 입니다."
 tags: ['tae', 'ho']
 ---
 
