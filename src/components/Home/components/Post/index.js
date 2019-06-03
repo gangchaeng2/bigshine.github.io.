@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import { Wrap, PostCard, Title } from './styled'
+import { Wrap, PostCard, Title, Desc, Date, Tag } from './styled'
 
 export default ({ list }) => {
   const { allMarkdownRemark: { edges } } = useStaticQuery(
@@ -42,7 +42,13 @@ export default ({ list }) => {
             <Title>
               <Link to={fields.slug}>{title}</Link>
             </Title>
-            <p>{description}</p>
+            <Desc>{description}</Desc>
+            <Date>{date}</Date>
+            <Tag>
+              {tags && tags.length > 0 && tags.map(tag => (
+                <Link key={tag} to={`/tags/${tag}`}>{tag}</Link>
+              ))}
+            </Tag>
           </PostCard>
         )
       })}
