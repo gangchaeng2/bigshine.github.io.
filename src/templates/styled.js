@@ -1,4 +1,3 @@
-import { withPrefix } from 'gatsby'
 import styled from 'styled-components'
 
 export const Wrap = styled.div`

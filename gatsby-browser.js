@@ -1,2 +1,12 @@
-require("prismjs/themes/prism-solarizedlight.css")
-require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+import React from 'react'
+
+import GlobalStyle from './src/utils/globalStyle.js'
+
+export const wrapRootElement = ({ element }) => {
+  return (
+    <>
+      {element}
+      <GlobalStyle />
+    </>
+  )
+}
