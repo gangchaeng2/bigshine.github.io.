@@ -6,7 +6,7 @@ import { Wrap } from './styled'
 
 const HomeComponent = data => {
   return (
-    <Wrap className='Clearfix'>
+    <Wrap className="Clearfix">
       <div style={{ border: '1px solid', height: '200px', marginBottom: '30px' }}></div>
       <Tags {...data} />
       <Post {...data} />

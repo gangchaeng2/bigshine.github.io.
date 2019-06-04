@@ -2,10 +2,12 @@ import styled from 'styled-components'
 import { Link } from 'gatsby'
 
 export const Wrap = styled.div`
-  max-width: 1000px;
+  display: flex;
   margin: 0 auto;
   padding: 0 20px;
+  max-width: 1000px;
   height: 80px;
+  align-items: center;
 `
 
 export const A = styled(Link)`

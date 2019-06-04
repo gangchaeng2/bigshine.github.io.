@@ -45,6 +45,12 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  input {
+    &:focus {
+      outline: none;
+    }
+  }
+
   .Clearfix {
     &::after {
       display: block;

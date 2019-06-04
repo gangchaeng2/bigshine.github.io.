@@ -1,7 +1,7 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { string, bool } from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { string, bool } from 'prop-types'
+import { StaticQuery, graphql } from 'gatsby'
 
 const SEO = ({ lang, title, description, pathname, tag }) => (
   <StaticQuery
@@ -13,15 +13,15 @@ const SEO = ({ lang, title, description, pathname, tag }) => (
           titleTemplate,
           defaultDescription,
           siteUrl,
-          keywords
+          keywords,
         },
       },
     }) => {
       const seo = {
-        title: `${title || defaultTitle} ${tag ? '#'+tag : ''}`,
+        title: `${title || defaultTitle} ${tag ? '#' + tag : ''}`,
         description: description || defaultDescription,
-        url: `${siteUrl}${pathname || "/"}`,
-        keywords: keywords
+        url: `${siteUrl}${pathname || '/'}`,
+        keywords: keywords,
       }
 
       return (
@@ -63,7 +63,7 @@ SEO.defaultProps = {
   description: null,
   pathname: null,
   article: false,
-  lang: 'ko'
+  lang: 'ko',
 }
 
 const query = graphql`

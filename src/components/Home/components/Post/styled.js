@@ -44,13 +44,14 @@ export const Tag = styled.div`
     padding: 5px;
     font-size: 10px;
     background-color: #ddd;
+    border-radius: 3px;
 
     &:hover {
-      background-color: rgba(221, 221, 221, 0.8)
+      background-color: rgba(221, 221, 221, 0.8);
     }
 
     & + a {
-      margin-left: 5px;
+      margin-left: 10px;
     }
   }
 `

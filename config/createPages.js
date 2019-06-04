@@ -1,5 +1,5 @@
-const path = require("path")
-const _ = require("lodash")
+const path = require('path')
+const _ = require('lodash')
 
 module.exports = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -41,7 +41,7 @@ module.exports = ({ actions, graphql }) => {
     let tags = []
     // Iterate through each post, putting all found tags into `tags`
     _.each(posts, edge => {
-      if (_.get(edge, "node.frontmatter.tags")) {
+      if (_.get(edge, 'node.frontmatter.tags')) {
         tags = tags.concat(edge.node.frontmatter.tags)
       }
     })
