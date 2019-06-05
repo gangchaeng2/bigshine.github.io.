@@ -34,6 +34,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'HangeulNuri', 'Sans-serif';
     box-sizing: border-box;
+    background: #f1f3f4;
   }
 
   a {
