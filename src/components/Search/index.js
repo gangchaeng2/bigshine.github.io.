@@ -9,7 +9,6 @@ const SearchComponent = ({
   query, hits, wrapRef,
   onChangeQuery,
 }) => {
-  console.log(hits)
   return (
     <Wrap ref={wrapRef}>
       <input type="text" name="query" value={query} onChange={onChangeQuery.bind(null)} />

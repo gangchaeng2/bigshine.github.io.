@@ -8,6 +8,7 @@ import { Wrap } from './styled'
 
 export default LayoutComponent => {
   return ({ ...props }) => {
+    const { tag } = {...props}
     const { site } = useStaticQuery(
       graphql`
         query SiteTitleQuery {
@@ -22,7 +23,7 @@ export default LayoutComponent => {
 
     return (
       <Wrap>
-        <Seo title={site.siteMetadata.title} />
+        <Seo title={site.siteMetadata.title} tag={tag}/>
         <Header />
         <LayoutComponent {...props} />
       </Wrap>

@@ -41,7 +41,7 @@ export default SearchComponent => {
     }, [query])
 
     const onMouseDown = e => {
-      console.log(wrapRef.current, e)
+      // console.log(wrapRef.current, e)
       if (wrapRef.current && !wrapRef.current.contains(e.target)) {
         reset()
       }

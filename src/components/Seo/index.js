@@ -17,12 +17,15 @@ const SEO = ({ lang, title, description, pathname, tag }) => (
         },
       },
     }) => {
+      console.log(title, description, pathname, tag)
       const seo = {
         title: `${title || defaultTitle} ${tag ? '#' + tag : ''}`,
         description: description || defaultDescription,
-        url: `${siteUrl}${pathname || '/'}`,
+        url: `${siteUrl}${pathname || ''}`,
         keywords: keywords,
       }
+
+      console.log(seo.url)
 
       return (
         <>
