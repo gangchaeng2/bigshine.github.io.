@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Wrap = styled.div`
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
+  margin-left: 15rem;
+  background-color: #f1f3f4;
 `
