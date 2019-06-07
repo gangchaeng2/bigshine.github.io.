@@ -4,12 +4,14 @@ import Card from '../Card'
 
 import { Wrap } from './styled'
 
-const ListComponent = () => {
+const ListComponent = ({
+  postsData,
+}) => {
   return (
     <Wrap>
-      <Card />
-      <Card />
-      <Card />
+      {postsData.map(item => (
+        <Card key={item.fields.slug} {...item} />
+      ))}
     </Wrap>
   )
 }

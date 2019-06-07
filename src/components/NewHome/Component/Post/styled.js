@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Wrap = styled.div`
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
+  padding-left: 25px;
+  padding-right: 25px;
 `
 
 export const Section = styled.div`

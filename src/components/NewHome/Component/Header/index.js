@@ -1,11 +1,13 @@
 import React from 'react'
 
-import { Wrap, A } from './styled'
+import Search from '../Search'
+
+import { Wrap } from './styled'
 
 const HeaderComponent = () => {
   return (
     <Wrap>
-      <A to="/">Bigshine</A>
+      <Search />
     </Wrap>
   )
 }
