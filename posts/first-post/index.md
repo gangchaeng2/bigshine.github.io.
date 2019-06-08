@@ -6,13 +6,6 @@ description: "안녕하세요 첫번째 포스트 입니다."
 tags: ["test2"]
 ---
 
----
-__Advertisement :)__
-
-You will like those projects!
-
----
-
 # h1 Heading 8-)
 ## h2 Heading
 ### h3 Heading

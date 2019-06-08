@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 export const Card = styled.div`
   position: relative;
@@ -29,7 +30,8 @@ export const MainCircle = styled.div`
   }
 `
 
-export const Header = styled.p`
+export const Title = styled(Link)`
+  line-height: 20px;
   font-size: 18px;
   font-weight: 700;
 `
@@ -41,8 +43,7 @@ export const Date = styled.p`
 `
 
 export const Tag = styled.div`
-  margin-top: 10px;
-  padding: 10px;
+  padding: 10px 0;
   border-top: 1px solid #ddd;
 
   > a {
@@ -60,4 +61,15 @@ export const Tag = styled.div`
       margin-left: 10px;
     }
   }
+`
+
+export const MainText = styled.p`
+  display: flex;
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px 0;
+  align-items: center;
+  line-height: 20px;
+  border-top: 1px solid #ddd;
+  word-break: break-all;
 `

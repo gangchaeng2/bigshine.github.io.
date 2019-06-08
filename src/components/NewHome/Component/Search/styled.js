@@ -11,7 +11,7 @@ export const Input = styled.div`
   align-items: center;
   color: #343a40;
 
-  > img {
+  > svg {
     width: 20px;
     height: 20px;
     margin-right: 10px;

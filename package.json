@@ -39,6 +39,7 @@
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.19",
     "gh-pages": "^2.0.1",
+    "html-to-text": "^5.1.1",
     "lodash": "^4.17.11",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
