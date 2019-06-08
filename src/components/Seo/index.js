@@ -17,15 +17,12 @@ const SEO = ({ lang, title, description, pathname, tag }) => (
         },
       },
     }) => {
-      console.log(title, description, pathname, tag)
       const seo = {
         title: `${title || defaultTitle} ${tag ? '#' + tag : ''}`,
         description: description || defaultDescription,
         url: `${siteUrl}${pathname || ''}`,
         keywords: keywords,
       }
-
-      console.log(seo.url)
 
       return (
         <>
@@ -44,6 +41,8 @@ const SEO = ({ lang, title, description, pathname, tag }) => (
             
             <meta name="twitter:title" content={seo.title} />
             <meta name="twitter:description" content={seo.description} />
+
+            <meta name="naver-site-verification" content="6b161302080694a9b419aac5df30199955e6566e"/>
           </Helmet>
         </>
       )

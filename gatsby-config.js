@@ -38,6 +38,7 @@ module.exports = {
       options: {
         pages: `${__dirname}/src/pages`,
         components: `${__dirname}/src/components`,
+        utils: `${__dirname}/src/utils`,
       },
     },
     {

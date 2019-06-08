@@ -27,35 +27,39 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${withPrefix('fonts/BMHANNAPro.ttf')}) format('truetype'),
          url(${withPrefix('fonts/BMHANNAPro.otf')}) format('opentype');
   }
+  html {
+    font-size: 14px;
 
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'HangeulNuri', 'Sans-serif';
-    box-sizing: border-box;
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-  }
-
-  ul, li {
-    list-style: none;
-  }
-
-  input {
-    &:focus {
-      outline: none;
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'HangeulNuri', 'Sans-serif';
+      box-sizing: border-box;
+      background: #f1f3f4;
     }
-  }
 
-  .Clearfix {
-    &::after {
-      display: block;
-      content: "";
-      clear: both;
+    a {
+      color: black;
+      text-decoration: none;
+    }
+
+    ul, li {
+      list-style: none;
+    }
+
+    input {
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .Clearfix {
+      &::after {
+        display: block;
+        content: "";
+        clear: both;
+      }
     }
   }
 `

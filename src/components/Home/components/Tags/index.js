@@ -19,8 +19,6 @@ const TagComponent = data => {
     `
   )
 
-  console.log(group, tag)
-
   return (
     <Wrap>
       <section>태그</section>
@@ -28,16 +26,11 @@ const TagComponent = data => {
         <li style={{ marginTop: '5px' }}>
           <Link to="/" activeClassName={isEmpty(tag) ? 'active' : ''}>전체보기</Link>
         </li>
-        {group.map((item, key) => {
-          console.log(item.fieldValue, tag, item.fieldValue === tag)
-          return (
-            <li key={item.fieldValue}>
-              <Link to={`/tags/${item.fieldValue}`} activeClassName={item.fieldValue === tag ? 'active' : ''}>
-                {item.fieldValue} <span>({item.totalCount})</span>
-              </Link>
-            </li>
-          )
-        })}
+        {group.map(item => (
+          <li key={item.fieldValue}>
+            <Link to={`/tags/${item.fieldValue}`} activeClassName={item.fieldValue === tag ? 'active' : ''}>{item.fieldValue} <span>({item.totalCount})</span></Link>
+          </li>
+        ))}
       </Tags>
     </Wrap>
   )
