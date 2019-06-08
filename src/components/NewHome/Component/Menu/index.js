@@ -6,7 +6,7 @@ import {
 } from './styled'
 
 const MenuComponent = () => {
-  const { location } = window
+  // const { location } = window
 
   return (
     <Wrap>
@@ -19,7 +19,7 @@ const MenuComponent = () => {
       <Section>
         <Ul>
           <li>
-            <Link to="/" activeClassName={location.pathname === '/' ? 'active' : ''}>Home</Link>
+            <Link to="/" activeClassName={true ? 'active' : ''}>Home</Link>
           </li>
           <li>
             <Link to="/post">Post</Link>
