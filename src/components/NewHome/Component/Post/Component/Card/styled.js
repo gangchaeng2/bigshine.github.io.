@@ -70,6 +70,7 @@ export const MainText = styled.p`
   padding: 10px 0;
   align-items: center;
   line-height: 20px;
+  font-size: 12px;
   border-top: 1px solid #ddd;
   word-break: break-all;
 `

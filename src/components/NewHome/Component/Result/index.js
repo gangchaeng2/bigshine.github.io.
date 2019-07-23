@@ -18,7 +18,7 @@ export default ({
               <Link to={`${hit.fields.slug}`}>
                 <HighLight dangerouslySetInnerHTML={{ __html: hit._highlightResult.title.value }} />
                 {hit._highlightResult.tags.length > 0 && hit._highlightResult.tags.map(tag => (
-                  <HighLight style={{ display: 'inline-block' }} dangerouslySetInnerHTML={{ __html: tag.value }} />
+                  <HighLight key={tag.value} style={{ display: 'inline-block' }} dangerouslySetInnerHTML={{ __html: tag.value }} />
                 ))}
               </Link>
             </Li>
