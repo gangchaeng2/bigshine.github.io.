@@ -2,14 +2,13 @@ import React from 'react'
 
 import Seo from 'components/Seo'
 import Layout from 'components/Layout'
-// import Home from 'components/Home'
-import NewHome from 'components/NewHome'
+import Home from 'containers/Home'
 
 const IndexPage = () => {
   return (
     <Layout>
       <Seo keywords={[`blog`, `bigshine`]} />
-      <NewHome />
+      <Home />
     </Layout>
   )
 }
